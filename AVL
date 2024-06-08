@@ -1,0 +1,32 @@
+    }
+}
+
+int main() {
+    struct Node *root = NULL;
+
+    root = insert(root, 9);
+    root = insert(root, 5);
+    root = insert(root, 10);
+    root = insert(root, 0);
+    root = insert(root, 6);
+    root = insert(root, 11);
+    root = insert(root, -1);
+    root = insert(root, 1);
+    root = insert(root, 2);
+
+    printf("Preorder traversal of the constructed AVL tree is \n");
+    preOrder(root);
+
+    root = deleteNode(root, 10);
+
+    printf("\nPreorder traversal after deletion of 10 \n");
+    preOrder(root);
+
+    struct Node *result = search(root, 6);
+    if (result != NULL)
+        printf("\nNode with key 6 found in AVL tree\n");
+    else
+        printf("\nNode with key 6 not found in AVL tree\n");
+
+    return 0;
+}
